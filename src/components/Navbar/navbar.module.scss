@@ -1,0 +1,29 @@
+.container {
+display: block;
+flex-direction: row;
+background-color:#f9cb77;
+color: #3a3a3a;
+font-weight:500;
+line-height:64px;
+padding:16px 0px;
+}
+
+.barra {
+    justify-content: space-between;
+    align-items: center;;
+    color: #3a3a3a;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+a{color:#3a3a3a;
+display: inline-block;
+font-family: Raleway;
+font-weight:500;
+line-height:64px;
+padding:0px 16px;
+text-align:right;
+list-style: none;
+}
