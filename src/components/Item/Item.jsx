@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ItemCount from "./components/ItemCount/ItemCount"
 const Item = ({item}) => {
     
   return (
@@ -8,6 +8,7 @@ const Item = ({item}) => {
         <img src={item.image} alt="" width="200" height="200"/>
         <h4>{item.description}</h4>
         <h5>{item.price}</h5>
+        <ItemCount/>
      </div>
   )
 }

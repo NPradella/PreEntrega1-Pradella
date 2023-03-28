@@ -11,7 +11,7 @@ const Navbar = ({}) => {
       </div>
       <div className={styles.barra}>
         <a href="">Inicio</a>
-        <a href="">Juegos</a>
+        <link to="/products"> <p>Productos</p> </link>
         <a href="">Acerca De</a>
         <CartWidget/>
       </div>
