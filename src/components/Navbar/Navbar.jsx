@@ -1,5 +1,6 @@
 import styles from "./navbar.module.scss";
 import CartWidget from "../CartWidget/CartWidget";
+
 const Navbar = ({}) => {
   return (
     <nav className={styles.container}>
