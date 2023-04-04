@@ -1,18 +1,15 @@
-import './App.css';
-import Home from "./components/Home/Home";
-import Navbar from './components/Navbar/Navbar';
+import { useEffect, useState } from "react";
+import { BrowserRouter, Router, Navigate, Route, Routes } from "react-router-dom";
+import "./App.css";
+import ItemDetail from "./components/ItemDetail";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import ItemList from "./components/ItemListContainer/ItemList";
+import ItemFilter from "./components/ItemFilter";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemCount from "./components/ItemCount/ItemCount"
-import { useEffect } from 'react';
-import {useState} from 'react';
-import axios from 'axios';
-import Item from './components/Item/Item';
-import {Navigate, Routes, Route} from 'react-router-dom';
-import ItemList from './components/ItemListContainer/ItemList';
 
 
 function App() {
-
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -25,15 +22,25 @@ function App() {
 
   return (
     <div>
-    <Navbar/>
-    <Routes> 
-      <Route path="/items"
-        element={<ItemList items={productos}/>}/>
-      <Route path="/items/:id" element={<Item />} />    
-    </Routes>
-      </div> 
+        <BrowserRouter> 
+        <Navbar />
+        <Routes>
+      
+          <Route path="/" element={<Navigate to="/products" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/products" element={<ItemList productos={productos} />}/>
+          <Route path="/products/:id" element={<ItemDetail />} />
+          <Route path="/products/:categoryName" element={<ItemListContainer />} />
+          <Route path="/cart" element={<h3>Cart</h3>} />
+          <Route path="/404" element={<h2>404 Not Found</h2>} />
+          <Route path="*" element={<Navigate to="/404" />} />
+        </Routes>
+
+        </BrowserRouter>
+
+      
+    </div>
   );
-  
 }
 
-export default App
+export default App;

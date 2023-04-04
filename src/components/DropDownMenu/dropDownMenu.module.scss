@@ -1,0 +1,23 @@
+.dropDownMenu.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed)ease;
+}
+
+.dropDownMenu.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--speed)ease;
+}
+
+.menuContainer{
+    justify-content: space-between;
+    align-items: center;;
+    color: #3a3a3a;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+    line-height: 29px;
+}
