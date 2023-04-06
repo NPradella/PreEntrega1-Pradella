@@ -30,7 +30,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/products" element={<ItemList productos={productos} />}/>
           <Route path="/products/:id" element={<ItemDetail />} />
-          <Route path="/products/:categoryName" element={<ItemListContainer />} />
+          <Route path="/category/:categoryName" element={<ItemListContainer />} />
           <Route path="/cart" element={<h3>Cart</h3>} />
           <Route path="/404" element={<h2>404 Not Found</h2>} />
           <Route path="*" element={<Navigate to="/404" />} />

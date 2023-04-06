@@ -12,17 +12,18 @@ const ItemFilter = () => {
         const {data} = await axios('https://fakestoreapi.com/products');
         setItemCategory(data);
     }
-
+    const filteredItems = itemCategory.filter((producto) => producto.category === category);
     useEffect(() => {
       getCategory()
     }, [])
     
     return (
-    <>
-    {itemCategory.map((producto) => (producto.category === category ?
-    <Item producto={producto} /> : <Link to="/404" />))}
-    </>
-  )
+      <>
+        {filteredItems.map((producto) => (
+          <Item key={producto.id} producto={producto} />
+        ))}
+      </>
+    );
 }
 
 export default ItemFilter
